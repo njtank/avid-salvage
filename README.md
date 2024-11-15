@@ -1,3 +1,5 @@
+![Avid_RP_No_Text-removebg-preview](https://github.com/user-attachments/assets/9030d8f6-b205-4581-8fd9-41bb7cfab649)
+
 # **Avid-Salvage**  
 **Version:** 1.0.0  
 
