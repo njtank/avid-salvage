@@ -1,37 +1,29 @@
 Config = {}
 
--- Scrap Yard Location (for the blip and sphere zones)
-Config.ScrapYardLocation = vector3(200.0, -2000.0, 20.0) -- Example coordinates
+-- PED settings
+Config.PedModel = "s_m_y_construct_01"
+Config.PedLocation = vector4(-500.5, -800.2, 30.5, 90.0) -- Changed to vector4
 
--- Blip Configuration
+-- Task settings
+Config.TaskDuration = 17000 -- Duration in milliseconds (17 seconds)
+Config.PayAmount = 50 -- Payment amount for completing all tasks
+Config.RewardMin = 1 -- Minimum item amount for task reward
+Config.RewardMax = 3 -- Maximum item amount for task reward
+Config.RewardItems = { "rubber", "steel", "iron" } -- Items rewarded after each task
+
+-- Salvage zones
+Config.SalvageZones = {
+    { coords = vector3(-502.2, -802.5, 30.5), radius = 1.0 },
+    { coords = vector3(-503.1, -805.3, 30.5), radius = 1.0 },
+    { coords = vector3(-505.6, -807.2, 30.5), radius = 1.0 },
+    -- Add more zones as needed
+}
+
+-- Blip settings
 Config.Blip = {
-    coords = vector3(200.0, -2000.0, 20.0), -- Position of the blip
-    sprite = 402,  -- Blip sprite ID (e.g., 402 is for a scrap yard)
-    color = 5,     -- Blip color (e.g., 5 for green)
-    scale = 0.8,   -- Blip size
-    name = "Scrap Yard" -- Name that will show on the map
-}
-
--- Task Duration (in seconds)
-Config.TaskDuration = 24  -- Example: 24 seconds to scrap a car
-
--- Reward Items
-Config.RewardItems = {
-    "plastic",   -- Item 1
-    "scrapmetal", -- Item 2
-    "rubber"      -- Item 3
-}
-
--- Item Amount Range
-Config.MinRewardAmount = 1
-Config.MaxRewardAmount = 4
-
--- Number of Tasks Before Cash Payment
-Config.TasksBeforeCash = 5  -- After 5 tasks, $50 is paid to the player
-
--- Sphere Zone Configuration (for each car in the scrapyard)
-Config.ScrapZones = {
-    {coords = vector3(210.0, -2000.0, 20.0), radius = 3.0},
-    {coords = vector3(220.0, -2000.0, 20.0), radius = 3.0},
-    -- Add more zones here as needed
+    coords = vector3(-500.0, -800.0, 30.5),
+    sprite = 318,
+    color = 1,
+    scale = 0.8,
+    label = "Salvage Yard",
 }
