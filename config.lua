@@ -1,21 +1,37 @@
 Config = {}
 
--- Ped Config
-Config.PedModel = 's_m_m_autoshop_01' -- Example ped model
-Config.PedCoords = vector4(-343.34, -1569.22, 25.22, 50.0) -- Example coordinates (x, y, z, heading)
+-- Scrap Yard Location (for the blip and sphere zones)
+Config.ScrapYardLocation = vector3(200.0, -2000.0, 20.0) -- Example coordinates
 
--- Zones for Salvaging
-Config.SalvageZones = {
-    vector3(-340.32, -1565.50, 25.22),
-    vector3(-345.50, -1570.15, 25.22),
-    -- Add more zones here
+-- Blip Configuration
+Config.Blip = {
+    coords = vector3(200.0, -2000.0, 20.0), -- Position of the blip
+    sprite = 402,  -- Blip sprite ID (e.g., 402 is for a scrap yard)
+    color = 5,     -- Blip color (e.g., 5 for green)
+    scale = 0.8,   -- Blip size
+    name = "Scrap Yard" -- Name that will show on the map
 }
 
--- Salvage Rewards
-Config.RewardItems = { 'plastic', 'scrapmetal', 'rubber' }
-Config.MinReward = 1
-Config.MaxReward = 4
+-- Task Duration (in seconds)
+Config.TaskDuration = 24  -- Example: 24 seconds to scrap a car
 
--- Payment
-Config.TasksRequired = 14
-Config.PaymentAmount = 50 -- Cash
+-- Reward Items
+Config.RewardItems = {
+    "plastic",   -- Item 1
+    "scrapmetal", -- Item 2
+    "rubber"      -- Item 3
+}
+
+-- Item Amount Range
+Config.MinRewardAmount = 1
+Config.MaxRewardAmount = 4
+
+-- Number of Tasks Before Cash Payment
+Config.TasksBeforeCash = 5  -- After 5 tasks, $50 is paid to the player
+
+-- Sphere Zone Configuration (for each car in the scrapyard)
+Config.ScrapZones = {
+    {coords = vector3(210.0, -2000.0, 20.0), radius = 3.0},
+    {coords = vector3(220.0, -2000.0, 20.0), radius = 3.0},
+    -- Add more zones here as needed
+}
